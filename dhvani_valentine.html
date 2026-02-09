@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<title>Dhvani ❤️ Forever & Always</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff5f8d, #ffb6c1);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 25px;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: pop 0.8s ease;
+}
+
+/* Hide scrollbar but keep scrolling */
+.card::-webkit-scrollbar {
+  width: 0;
+}
+.card {
+  scrollbar-width: none;
+}
+
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+  color: #ff2f68;
+  margin-top: 5px;
+}
+
+/* Images */
+.photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ff5f8d;
+  margin: 10px auto;
+}
+
+.couple {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 90px;
+}
+
+button {
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#yes {
+  background: #ff2f68;
+  color: white;
+  left: 15px;
+}
+
+#no {
+  background: #ddd;
+  right: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Text */
+.love {
+  color: #ff2f68;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: 10px;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Handwritten */
+.handwrite {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+  color: #ff2f68;
+  margin: 15px auto;
+  border-right: 2px solid #ff2f68;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(22) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing { to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  from { transform: translateY(110vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* Mobile fine-tuning */
+@media (max-height: 650px) {
+  .photo { width: 110px; height: 110px; }
+  .handwrite { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+for (let i = 0; i < 12; i++) {
+  let h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "💖";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.animationDuration = 3 + Math.random() * 5 + "s";
+  document.body.appendChild(h);
+}
+</script>
+
+<!-- ASK SCREEN -->
+<div class="card" id="ask">
+  <h1>Dhvani 💕</h1>
+  <img src="dhvani.jpg" class="photo">
+
+  <p>
+    મારા દિલથી એક સવાલ 💌<br>
+    શું તું મારી Valentine બનશે? 🌹
+  </p>
+
+  <div class="buttons">
+    <button id="yes">હાંજી ❤️</button>
+    <button id="no">ના 🙈</button>
+  </div>
+</div>
+
+<!-- ACCEPT SCREEN -->
+<div class="card hidden" id="accept">
+  <h1>She said YES 🥹💍</h1>
+
+  <p class="love">
+    Dhvani ❤️<br><br>
+    તું માત્ર મારી પત્ની નથી,<br>
+    તું મારી આદત છે…<br>
+    જે વગર બધું અધૂરું લાગે છે 💞<br><br>
+
+    તું મારી શાંતિ છે,<br>
+    મારી તાકાત છે,<br>
+    અને મારા દરેક સપનાની શરૂઆત છે 🌙✨<br><br>
+
+    આજથી નહીં,<br>
+    પણ હંમેશા માટે… ♾️
+  </p>
+
+  <div class="handwrite">I Love You Dhvani</div>
+
+  <img src="couple.jpg" class="couple">
+
+  <p class="love">
+    Forever yours,<br>
+    today, tomorrow & always ❤️
+  </p>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const ask = document.getElementById("ask");
+const accept = document.getElementById("accept");
+const music = document.getElementById("music");
+
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.transform =
+    `translate(${Math.random()*200-100}px, ${Math.random()*150-75}px)`;
+});
+
+yesBtn.addEventListener("click", () => {
+  ask.classList.add("hidden");
+  accept.classList.remove("hidden");
+  music.play();
+});
+</script>
+
+</body>
+</html>
